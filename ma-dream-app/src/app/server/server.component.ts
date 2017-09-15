@@ -7,6 +7,20 @@ import { Component, Input } from '@angular/core';
     styles: [],
 })
 export class ServerComponent {
+    constructor() {
+        this.randomStatus();
+    }
+
+    randomStatus() {
+        var rnd = Math.random();
+        this.serverStatus = rnd > 0.5 ? "Online" : "Offline";
+        setTimeout(() => { this.randomStatus(); }, 100)
+    }
+
+
     @Input() serverId: number;
-    serverStatus: string = "Online"
+    serverStatus: string;
+
+
 }
+
