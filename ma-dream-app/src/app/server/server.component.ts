@@ -1,12 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 
 @Component({
     selector: 'app-server',
     templateUrl: 'server.component.html',
-    styles: ['h3{color: red}']
-
+    styles: [],
 })
 export class ServerComponent {
-
+    @Input() serverId: number;
+    serverStatus: string = "Online"
 }

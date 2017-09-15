@@ -1,1 +1,11 @@
-<h3>server component</h3>
+<div class="card">
+  <div class="card-header">
+    Server info
+  </div>
+  <div class="card-body">
+    <h4 class="card-title">server {{serverId}}</h4>
+    <h6 class="card-subtitle mb-2 text-muted">is <strong>{{serverStatus}}</strong></h6>
+    <p *ngIf="serverId > 30; else myElse">Is greater than 30</p>
+    <ng-template #myElse>Small</ng-template>
+  </div>
+</div>

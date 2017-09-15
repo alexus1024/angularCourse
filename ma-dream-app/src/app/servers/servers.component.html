@@ -1,5 +1,24 @@
 <h3>servers works!</h3>
-<app-server></app-server>
-<app-server></app-server>
-<app-server></app-server>
-<app-server></app-server>
+
+<div class ="row">
+  <div class="col-md-3" *ngFor="let serv of servers">
+    <app-server [serverId]="serv"></app-server>
+  </div>
+
+</div>
+
+<div class="row">
+  <div class="col">
+    <button class="btn btn-primary" [value]="allowNewServer" (click)="doStuff()">Add new server</button>
+  </div>
+
+
+  <!--<div class ="col">
+    <input type="text" class="form-control" [(ngModel)] ="testProp"/>
+    <input type="text" class="form-control" [value]="testProp" />
+    <input type="text" class="form-control" (input)="testProp=$event.target.value" />
+    <div>{{testProp}}</div>
+  </div>-->
+  
+</div>
+

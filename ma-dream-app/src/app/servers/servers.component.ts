@@ -6,10 +6,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./servers.component.css']
 })
 export class ServersComponent implements OnInit {
+    constructor() {
+        
+        
+    }
 
-  constructor() { }
+    doStuff() {
+        this.allowNewServer++;
+        console.log(this.allowNewServer)
+        setTimeout(() => { this.doStuff(); }, 1000)
+    }
 
   ngOnInit() {
-  }
-
+    }
+  testProp: string = "hello";
+  allowNewServer: number = -10;
+  servers = [1,2,3,4,5,60]
 }
