@@ -1,3 +1,4 @@
+import { Recipe } from '../recipe.model';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,6 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecipeDetailComponent implements OnInit {
 
+  recipe: Recipe = {
+    imagePath : 'https://ichef.bbci.co.uk/news/660/cpsprodpb/1325A/production/_88762487_junk_food.jpg',
+    description : 'very fast food',
+    name: 'fastfood'
+  };
   constructor() { }
 
   ngOnInit() {
