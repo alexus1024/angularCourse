@@ -1,16 +1,11 @@
-<div class="row">
-  <div class="col-xs-12">
-    <img [src]="recipe.imagePath" alt="" style="max-height: 200px"/>
+<div class="card">
+  <img class="card-img-top" [src]="recipe.imagePath" alt="Food picture" style="max-height: 200px;">
+  
+  <div class="card-body">
+      <h4 class="card-title">{{recipe.name}}</h4>
+      <div>{{recipe.description}}</div>
   </div>
-</div>
-<div class="row">
-  <div class="col-xs-12">
-    <h1>{{recipe.name}}</h1>
-    <div>{{recipe.description}}</div>
-  </div>
-</div>
-<div class="row">
-  <div class="col-xs-12">
-    Ingritients
+  <div class="card-footer text-muted">
+      Ingritients
   </div>
 </div>

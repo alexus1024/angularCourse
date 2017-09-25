@@ -1,3 +1,4 @@
+import { Ingridient } from '../../shared/ingridient.model';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -8,6 +9,8 @@ import { Component, OnInit } from '@angular/core';
 export class ShoppingListEditComponent implements OnInit {
 
   constructor() { }
+
+  data: Ingridient = {name: 'Мясо', amount: 4};
 
   ngOnInit() {
   }
