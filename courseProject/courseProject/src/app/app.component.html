@@ -7,12 +7,5 @@
     </div>
   </div>  
 
-  <div class="row" *ngIf="currentPage=='shopping'">
-    <div class="col-lg-12">
-      <app-shopping-list-edit></app-shopping-list-edit>
-    </div>
-    <div class="col-lg-12">
-      <app-shopping-list></app-shopping-list>
-    </div>
-  </div>
+  <app-shopping *ngIf="currentPage=='shopping'"></app-shopping>
 </div>

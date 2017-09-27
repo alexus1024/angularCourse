@@ -17,9 +17,9 @@
               <input type="text" class="form-control" placeholder="Сколько?" [(ngModel)]="data.amount" name="amount">
             </div>
           </div>
-          <button class="btn btn-success">Добавть</button>
-          <button class="btn btn-danger">Удалить</button>
-          <button class="btn btn-primary">Очистить</button>
+          <button class="btn btn-success" (click)="onAdd($event)">Добавть</button>
+          <button class="btn btn-danger" (click)="onRemove($event)">Удалить</button>
+          <button class="btn btn-primary" (click)="onClear($event)">Очистить</button>
         </form>
       </div>
     </div>

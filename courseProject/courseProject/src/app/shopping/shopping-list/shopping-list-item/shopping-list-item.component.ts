@@ -1,5 +1,5 @@
 import { Ingridient } from '../../../shared/ingridient.model';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-shopping-list-item',
@@ -8,6 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ShoppingListItemComponent implements OnInit {
 
+  @Output() selected = new EventEmitter<Ingridient>();
   @Input() data: Ingridient;
 
   constructor() { }

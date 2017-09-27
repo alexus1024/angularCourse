@@ -13,13 +13,14 @@ import { ShoppingListEditComponent } from './shopping/shopping-list-edit/shoppin
 
 import { HeaderComponent } from './header/header.component';
 import { RecipesComponent } from './recipes/recipes.component';
+import { ShoppingComponent } from './shopping/shopping.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     RecipeListComponent, RecipeListItemComponent, RecipeDetailComponent,
-     ShoppingListComponent, ShoppingListItemComponent, HeaderComponent, RecipesComponent, ShoppingListEditComponent
+     ShoppingListComponent, ShoppingListItemComponent, HeaderComponent, RecipesComponent, ShoppingListEditComponent, ShoppingComponent
   ],
   imports: [
     BrowserModule, FormsModule

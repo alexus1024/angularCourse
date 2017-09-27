@@ -1,5 +1,5 @@
 import { Ingridient } from '../../shared/ingridient.model';
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-shopping-list-edit',
@@ -10,9 +10,26 @@ export class ShoppingListEditComponent implements OnInit {
 
   constructor() { }
 
-  data: Ingridient = {name: 'Мясо', amount: 4};
+  @Output() addItem = new EventEmitter<Ingridient>();
+  @Output() removeItem = new EventEmitter<Ingridient>();
+
+  @Input() data: Ingridient;
 
   ngOnInit() {
+  }
+
+  onAdd() {
+    const newItem = Object.assign({}, this.data);
+    this.addItem.emit(newItem);
+  }
+
+  onRemove() {
+    this.removeItem.emit(this.data);
+  }
+
+  onClear() {
+    this.data.name = '';
+    this.data.amount = 0;
   }
 
 }
