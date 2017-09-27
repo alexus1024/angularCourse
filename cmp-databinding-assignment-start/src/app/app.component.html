@@ -14,4 +14,18 @@
       </ol>
     </div>
   </div>
+  <div class="row">
+    <div class="col-xl-12">
+      <app-game-control (tick)="onGameTick($event)"></app-game-control>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-1" *ngFor="let gameEl of gameElements">
+          <app-even *ngIf="gameEl; else elseBlock"></app-even>
+          <ng-template #elseBlock>
+              <app-odd ></app-odd>
+          </ng-template>
+          
+    </div>
+  </div>
 </div>

@@ -6,4 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
+  gameElements: boolean[] = [];
+  onGameTick(counter: number) {
+    this.gameElements.push(!!(counter % 2));
+  }
+
 }
