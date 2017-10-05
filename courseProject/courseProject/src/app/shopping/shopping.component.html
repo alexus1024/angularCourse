@@ -1,8 +1,8 @@
 <div class="row">
     <div class="col-lg-12">
-      <app-shopping-list-edit (addItem)="list.addItem($event)" (removeItem)="list.removeItem($event)" [data]="selectedIngridient"></app-shopping-list-edit>
+      <app-shopping-list-edit></app-shopping-list-edit>
     </div>
     <div class="col-lg-12">
-      <app-shopping-list #list (itemSelected)="onItemSelected($event)"></app-shopping-list>
+      <app-shopping-list></app-shopping-list>
     </div>
   </div>

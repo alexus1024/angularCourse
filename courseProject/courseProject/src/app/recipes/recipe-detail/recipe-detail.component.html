@@ -1,12 +1,34 @@
-<div class="card">
 
-  <img *ngIf="recepe.imagePath" class="card-img-top" [src]="recepe.imagePath" alt="Food picture" style="max-height: 200px;">
-  
-  <div class="card-body">
-      <h4 class="card-title">{{recepe.name}}</h4>
-      <div>{{recepe.description}}</div>
-  </div>
-  <div class="card-footer text-muted">
-      Ingritients
-  </div>
+
+
+<div *ngIf="recepe; else NotSelectedText">
+    <div class="card">
+        
+          <img *ngIf="recepe.imagePath" class="card-img-top" [src]="recepe.imagePath" alt="Food picture" style="max-height: 200px;">
+          
+          <div class="card-body">
+              <h4 class="card-title">{{recepe.name}}</h4>
+              <div>{{recepe.description}}</div>
+        
+              <div class="dropdown" appDropdown>
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Dropdown button
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+              </div>
+        
+          </div>
+          <div class="card-footer text-muted">
+              Ingritients
+          </div>
+        </div>
 </div>
+   
+<ng-template #NotSelectedText>
+    <p>Выберите что нибудь</p>
+</ng-template>
+

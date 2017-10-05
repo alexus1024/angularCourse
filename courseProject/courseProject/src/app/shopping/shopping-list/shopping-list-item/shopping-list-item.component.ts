@@ -1,3 +1,4 @@
+import { ShoppingService } from '../../shopping.service';
 import { Ingridient } from '../../../shared/ingridient.model';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
@@ -8,12 +9,14 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class ShoppingListItemComponent implements OnInit {
 
-  @Output() selected = new EventEmitter<Ingridient>();
   @Input() data: Ingridient;
 
-  constructor() { }
+  constructor(private shoppingService : ShoppingService) { }
 
   ngOnInit() {
   }
 
+  onSelected(){
+this.shoppingService.select(this.data);
+  }
 }

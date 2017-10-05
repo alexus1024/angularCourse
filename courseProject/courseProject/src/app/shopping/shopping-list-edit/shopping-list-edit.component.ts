@@ -1,5 +1,6 @@
 import { Ingridient } from '../../shared/ingridient.model';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ShoppingService } from '../shopping.service';
 
 @Component({
   selector: 'app-shopping-list-edit',
@@ -8,10 +9,9 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class ShoppingListEditComponent implements OnInit {
 
-  constructor() { }
-
-  @Output() addItem = new EventEmitter<Ingridient>();
-  @Output() removeItem = new EventEmitter<Ingridient>();
+  constructor(private shoppingService: ShoppingService) {
+    shoppingService.selectedIngridient$.subscribe(i => this.data = i || { amount : 0, name : '' });
+  }
 
   @Input() data: Ingridient;
 
@@ -20,11 +20,11 @@ export class ShoppingListEditComponent implements OnInit {
 
   onAdd() {
     const newItem = Object.assign({}, this.data);
-    this.addItem.emit(newItem);
+    this.shoppingService.addItem(newItem);
   }
 
   onRemove() {
-    this.removeItem.emit(this.data);
+    this.shoppingService.removeItem(this.data);
   }
 
   onClear() {

@@ -3,14 +3,11 @@
 
   
   <div class="col-lg-6">
-      <app-recipe-list (itemSelected)="selectItem($event)"></app-recipe-list>
+      <app-recipe-list></app-recipe-list>
   </div>
   
   <div class="col-lg-6">
-    <app-recipe-detail [recepe]="selectedItem" *ngIf="selectedItem; else NotSelectedText"></app-recipe-detail>    
-    <ng-template #NotSelectedText>
-      <p>Выберите что нибудь</p>
-    </ng-template>
+    <app-recipe-detail></app-recipe-detail>
   </div>
 
 </div>

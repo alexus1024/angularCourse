@@ -7,14 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./shopping.component.css']
 })
 export class ShoppingComponent implements OnInit {
-
-
-  selectedIngridient: Ingridient = <Ingridient>{};
   constructor() { }
 
   ngOnInit() {
   }
-  onItemSelected(ing: Ingridient) {
-    this.selectedIngridient = ing;
-  }
+
 }
