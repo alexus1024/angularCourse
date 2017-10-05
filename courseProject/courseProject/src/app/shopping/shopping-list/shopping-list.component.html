@@ -1,4 +1,4 @@
 <h3>Shopping list</h3>
 <div class="list-group">    
-    <app-shopping-list-item [data]="item" (selected)="itemSelected.emit(item, $event)" *ngFor="let item of ingridients"></app-shopping-list-item>
+    <app-shopping-list-item [data]="item" *ngFor="let item of ingridients"></app-shopping-list-item>
 </div>

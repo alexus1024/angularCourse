@@ -11,12 +11,12 @@ export class ShoppingListItemComponent implements OnInit {
 
   @Input() data: Ingridient;
 
-  constructor(private shoppingService : ShoppingService) { }
+  constructor(private shoppingService: ShoppingService) { }
 
   ngOnInit() {
   }
 
-  onSelected(){
-this.shoppingService.select(this.data);
+  onSelected() {
+    this.shoppingService.select(this.data);
   }
 }

@@ -1,3 +1,4 @@
+import { Recipe } from '../recipes/recipe.model';
 import { BehaviorSubject } from 'rxjs/Rx';
 import { Ingridient } from '../shared/ingridient.model';
 
@@ -28,5 +29,10 @@ export class ShoppingService {
 
     select(ing: Ingridient) {
         this.selectedIngridient.next(ing);
+    }
+
+    addFromRecipe(r: Recipe) {
+        // this.ingridients = this.ingridients.concat(r.ingridients);
+        this.ingridients.push(...r.ingridients);
     }
 }

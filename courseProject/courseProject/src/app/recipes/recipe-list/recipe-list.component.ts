@@ -23,6 +23,6 @@ export class RecipeListComponent implements OnInit {
 
   }
   onAddRecipe() {
-    this.recipes.push({description: 'Новый рецепт', imagePath: '', name: 'Новый рецепт'});
+    this.recipes.push({description: 'Новый рецепт', imagePath: '', name: 'Новый рецепт', ingridients: []});
   }
 }

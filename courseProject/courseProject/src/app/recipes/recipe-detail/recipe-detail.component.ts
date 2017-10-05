@@ -1,3 +1,5 @@
+import { ShoppingService } from '../../shopping/shopping.service';
+import { Ingridient } from '../../shared/ingridient.model';
 import { Subscription } from 'rxjs/Rx';
 import { RecipeService } from '../recipe.service';
 import { Recipe } from '../recipe.model';
@@ -11,8 +13,8 @@ import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 export class RecipeDetailComponent implements OnInit, OnDestroy {
   subscription: Subscription;
 
-  @Input() recepe: Recipe = { name: '', description: '', imagePath: '' };
-  constructor(private recipeService: RecipeService) {
+  @Input() recepe: Recipe = { name: '', description: '', imagePath: '', ingridients: [] };
+  constructor(private recipeService: RecipeService, private shoppingService: ShoppingService) {
     this.subscription = recipeService.selectedRecipe.subscribe((r) => this.recepe = r);
   }
 
@@ -21,6 +23,10 @@ export class RecipeDetailComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.subscription.unsubscribe();
+  }
+
+  addToShopping() {
+    this.shoppingService.addFromRecipe(this.recepe);
   }
 
 }
