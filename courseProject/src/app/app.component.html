@@ -1,11 +1,4 @@
 <div class="container">
-  <app-header (onNavigate)="navigate($event)"></app-header>
-
-  <div class="row" *ngIf="currentPage=='recipes'">
-    <div class="col-lg-12">
-      <app-recipes ></app-recipes>
-    </div>
-  </div>  
-
-  <app-shopping *ngIf="currentPage=='shopping'"></app-shopping>
+  <app-header></app-header>
+  <router-outlet></router-outlet>
 </div>

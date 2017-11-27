@@ -7,8 +7,6 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  @Output() onNavigate = new EventEmitter<string>();
-
   constructor() { }
 
   ngOnInit() {

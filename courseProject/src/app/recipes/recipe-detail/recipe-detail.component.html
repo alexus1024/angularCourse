@@ -1,11 +1,11 @@
 <div *ngIf="recepe; else NotSelectedText">
   <div class="card">
 
-    <img *ngIf="recepe.imagePath" class="card-img-top" [src]="recepe.imagePath" alt="Food picture" style="max-height: 200px;">
+    <img *ngIf="current.imagePath" class="card-img-top" [src]="current.imagePath" alt="Food picture" style="max-height: 200px;">
 
     <div class="card-body">
-      <h4 class="card-title">{{recepe.name}}</h4>
-      <div>{{recepe.description}}</div>
+      <h4 class="card-title">{{current.name}}</h4>
+      <div>{{current.description}}</div>
 
       <div class="dropdown" appDropdown>
         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
@@ -24,7 +24,7 @@
 
       <div class="list-group">
 
-        <a *ngFor="let ing of recepe.ingridients" class="list-group-item flex-column align-items-start">
+        <a *ngFor="let ing of current.ingridients" class="list-group-item flex-column align-items-start">
           <p class="mb-1">{{ing.name}} - {{ing.amount}}</p>
         </a>
 
