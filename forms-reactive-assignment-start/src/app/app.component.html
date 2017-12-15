@@ -14,6 +14,20 @@
 
           Upon submitting the form, simply print the value to the console
       -->
+<h1>Works!</h1>
+      <form (ngSubmit)="onSubmit()" [formGroup]="projectsForm">
+        <ul>
+          <li><input formControlName="name" type="text" name="name"></li>
+          <li><input formControlName="mail" type="text" name="mail"></li>
+          <li><select formControlName="status" name="status">
+            <option value="s">Stable</option>  
+            <option value="c">Critical</option>  
+            <option value="f">Finished</option>  
+          </select></li>
+          <li><button>Submit</button></li>
+        </ul>
+        
+      </form>
     </div>
   </div>
 </div>
