@@ -1,6 +1,7 @@
 import { Ingridient } from '../../shared/ingridient.model';
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { ShoppingService } from '../shopping.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-shopping-list-edit',
@@ -9,27 +10,30 @@ import { ShoppingService } from '../shopping.service';
 })
 export class ShoppingListEditComponent implements OnInit {
 
-  constructor(private shoppingService: ShoppingService) {
-    shoppingService.selectedIngridient$.subscribe(i => this.data = i || { amount : 0, name : '' });
-  }
+  @ViewChild('f') form: NgForm;
 
-  @Input() data: Ingridient;
+  constructor(private shoppingService: ShoppingService) {
+
+  }
 
   ngOnInit() {
+    this.shoppingService.selectedIngridient$.subscribe(i => /*this.form.setValue({'name': i.name, 'amount': i.amount})*/ {
+
+            this.form.setValue({'name': i.name, 'amount':i.amount});
+    });
   }
 
-  onAdd() {
-    const newItem = Object.assign({}, this.data);
-    this.shoppingService.addItem(newItem);
+  onAdd(form: NgForm) {
+    const value = form.value;
+    this.shoppingService.addItem({amount: value.amount, name: value.name});
   }
 
   onRemove() {
-    this.shoppingService.removeItem(this.data);
+    this.shoppingService.removeItem(this.form.value);
   }
 
   onClear() {
-    this.data.name = '';
-    this.data.amount = 0;
+    this.form.resetForm();
   }
 
 }

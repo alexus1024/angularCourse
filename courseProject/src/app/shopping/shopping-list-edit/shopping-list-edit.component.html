@@ -6,20 +6,20 @@
         <h4 class="mb-0">Ингридиент</h4>
       </div>
       <div class="card-body">
-        <form class="container">
+        <form class="container" (ngSubmit)="onAdd(f)" #f="ngForm">
           <div class="row">
             <div class="col-md-6 mb-3">
               <label>Название ингридиента</label>
-              <input type="text" class="form-control" placeholder="Название ингридиента" [(ngModel)]="data.name" name="name">
+              <input type="text" class="form-control" placeholder="Название ингридиента" name="name" ngModel>
             </div>
             <div class="col-md-6 mb-3">
               <label>Количество</label>
-              <input type="text" class="form-control" placeholder="Сколько?" [(ngModel)]="data.amount" name="amount">
+              <input type="text" class="form-control" placeholder="Сколько?" name="amount" ngModel>
             </div>
           </div>
-          <button class="btn btn-success" (click)="onAdd($event)">Добавть</button>
-          <button class="btn btn-danger" (click)="onRemove($event)">Удалить</button>
-          <button class="btn btn-primary" (click)="onClear($event)">Очистить</button>
+          <button class="btn btn-success" type="submit">Добавть</button>
+          <button class="btn btn-danger" type="button" (click)="onRemove()" >Удалить</button>
+          <button class="btn btn-primary" type="button" (click)="onClear()" >Очистить</button>
         </form>
       </div>
     </div>
